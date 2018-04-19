@@ -1,4 +1,6 @@
 export default {
-    home: [],
-    carousel: {}
+    home: {},
+    carousel: {},
+    classify: {},
+    brand: {},
 }

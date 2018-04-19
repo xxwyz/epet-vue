@@ -1,19 +1,31 @@
 <template>
-    <div class="list">
-      <div class="header">
-          <div class="classify gg_ys">
-            <span class="on">分类</span>
-          </div>
-          <div class="brand gg_ys">
-            <span>品牌</span>
-          </div>
-          <img src="./images/sousuo.jpg">
+  <div class="list">
+    <!--t头部-->
+    <div class="header">
+      <div class="classify">
+        <router-link to="/list/classify" class="cfy"
+           :class="{on: '/list/classify'===$route.path}" @click="gotoChange('/list/classify')"
+        >分类</router-link>
       </div>
+      <div class="brand">
+        <router-link to="/list/brand" class='brd'
+           :class="{on: '/list/brand'===$route.path}" @click="goto('/list/brand')"
+        >品牌</router-link>
+      </div>
+      <img src="//static.epetbar.com/static_web/wap/src/images/background/search-ico.png">
     </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-    export default {}
+  export default {
+    methods: {
+      gotoChange (path) {
+        this.$router.replace(path)
+      }
+    }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -21,45 +33,59 @@
   .list
     width 100%
     height 100%
+    /*头部*/
     .header
       padding 0 15px
-      border-bottom 1px solid #cbcbcb
       position fixed
       left 0
       right 0
       top 0
       height 40px
-      z-index 11
-      background: #fff
+      border-bottom 2px solid #cbcbcb
+      box-sizing border-box
+      background #fff
+      z-index 6
       .classify
-        text-align right
-        padding-right 5%
         float left
-      .brand
-        padding-left 5%
-        float left
-      .gg_ys
-        box-sizing border-box
         width 50%
-        height 40px
-        line-height 40px
-        font-size 13px
-        font-weight 700
-      .span
-        display inline-block
-        height 40px
-        padding 0 4px
-        cursor pointer
-        &.on
-          color #ed4044
-          border-bottom 2px solid #ed4044
+        height 100%
+        text-align center
+        line-height 38px
+        box-sizing border-box
+        padding-right 5%
+        .cfy
+          display block
+          float right
+          margin 0 5px
+          font-weight 700
+          font-size 13px
+          color #333
+          &.on
+            color #ed4044
+            border-bottom 2px solid #ed4044
+      .brand
+        float right
+        width 50%
+        height 100%
+        text-align center
+        line-height 38px
+        box-sizing border-box
+        padding-left 5%
+        .brd
+          display block
+          float left
+          margin 0 5px
+          font-size 13px
+          font-weight 700
+          color #333
+          &.on
+            color #ed4044
+            border-bottom 2px solid #ed4044
       img
         width 14px
         height 14px
         position absolute
         vertical-align middle
-        top 13px
+        top 12px
         right 15px
-
-
 </style>

@@ -8,7 +8,7 @@
       <span>首页</span>
     </a>
     <a href="javascript:;" class="guide_item"
-       :class="{on: '/list'===$route.path}" @click="goto('/list')">
+       :class="{on: '/list/classify'===$route.path || '/list/brand' === $route.path}" @click="goto('/list')">
       <span class="item_icon">
         <i class="iconfont icon-chazhaobiaodanliebiao"></i>
       </span>

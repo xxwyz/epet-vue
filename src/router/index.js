@@ -32,11 +32,21 @@ export default new VueRouter({
       children: [
         {
           path: '/list/classify',
-          component: Classify
+          component: Classify,
+          meta: {
+            showFooter: true
+          }
         },
         {
           path: '/list/brand',
-          component: Brand
+          component: Brand,
+          meta: {
+            showFooter: true
+          }
+        },
+        {
+          path: '/',
+          redirect: '/list/classify'
         },
       ]
     },
